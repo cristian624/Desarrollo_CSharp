@@ -72,7 +72,11 @@ namespace Contactos
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-
+            // load the address using a shared method on SerializableData...
+            Address newAddress = (Address)SerializableData.Load(DataFileName,
+                                        typeof(Address));
+            // update the display...
+            PopulateFormFromAddress(newAddress);
         }
 
         private void Form1_Load(object sender, EventArgs e)
